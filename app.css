@@ -1,3 +1,16 @@
+:root{
+    --backgroundImage:linear-gradient(45deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(224deg 100% 25%) 11%,
+    hsl(217deg 100% 29%) 22%,
+    hsl(211deg 100% 32%) 33%,
+    hsl(205deg 100% 35%) 44%,
+    hsl(200deg 100% 37%) 56%,
+    hsl(196deg 100% 39%) 67%,
+    hsl(191deg 100% 41%) 78%,
+    hsl(189deg 67% 55%) 89%,
+    hsl(186deg 66% 66%) 100%);
+}
 *{
     padding: 0;
     margin: 0;
@@ -6,7 +19,7 @@
     
 }
 body{
-    background-color: #3661a1;
+    background-image:var(--backgroundImage);
     height: 100vh;
 }
 
@@ -53,7 +66,13 @@ ul li{
     background: #fff;
     position: relative;
     border-radius:8px;
-    box-shadow: 3px 3px 6px #52567e;
+    /* box-shadow: 3px 3px 6px #52567e; */
+    box-shadow:
+    0 1px 1px rgba(52, 55, 95, 0.075),
+    0 2px 2px rgba(52, 55, 95, 0.075),
+    0 4px 4px rgba(52, 55, 95, 0.075),
+    0 8px 8px rgba(52, 55, 95, 0.075),
+    0 16px 16px rgba(52, 55, 95, 0.075);
 }
 .form-container .inputblock{
     position: relative;
@@ -108,9 +127,9 @@ textarea{
 .inputblock textarea:not(:placeholder-shown) +.mylabel
 {
    margin:-4px 0;
-   font-size:14px;
+   font-size:12px;
    color: #627899;
-   padding-top:2px;
+   padding-top:4px;
 }
 
 #ib2{
@@ -137,7 +156,7 @@ textarea{
 
 #linkbutton{
     bottom: 0;
-    background-color: #85a7db;
+    background-image:var(--backgroundImage);
     padding:8px 0;
     border-radius:4px;
     color: #fff;
@@ -146,7 +165,6 @@ textarea{
     transition: all 0.3s ease;
 }
 #linkbutton:hover{
-    background-color: #4f7cc0;
     box-shadow: 2px 2px 4px rgba(93, 100, 165, 0.933);
 }
 
