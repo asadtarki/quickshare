@@ -53,13 +53,18 @@
 $con=mysqli_connect("localhost","root","","quickshare") ;
 if(isset($_REQUEST['submit']))
 {
+    $target_dir = "upload/";
     $title=$_REQUEST['title'];
     $message=$_REQUEST['message'];
-    $img=$_FILES["file"]["name"];
-    echo $img;
+    // $img=$_FILES["file"]["name"];
+    // echo $img;
     // echo "$title";
-}
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     
-
-
+    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["file"]["name"])). " has been uploaded.";
+      }
+}
 ?>
