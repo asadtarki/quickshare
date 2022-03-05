@@ -7,6 +7,7 @@
     <title>QuickShare</title>
     
     <link rel="stylesheet" href="app.css">
+   
 </head>
 <body>
     
@@ -20,10 +21,12 @@
     </header>
     <main>
         <div class="form-container"  id="form">
-            <form action="" enctype="multipart/form-data" method="post">
+            <form  enctype="multipart/form-data" method="post" id="mForm">
+            <div class="top" id="top">
                 <h3>Upload files</h3>
+               
                 <div class="inputblock" id="ib0">
-                    <input type="file" class="file" name="file"/>
+                    <input type="file" id="filepicker" class="file" name="file" required>
                 </div>
                 <div class="inputblock">
                     
@@ -33,38 +36,55 @@
 
                 <div class="inputblock ib2" id="ib2">
                     
-                    <textarea class="message" placeholder="  " name="message"></textarea>
+                    <textarea class="message" placeholder="  " name="message" ></textarea>
                     <label  class="mylabel">message</label>
                 </div>
                 <div class="inputblock ib3" id="ib3">
                     
-                    <input type="submit" value="generate link" id="linkbutton" name="submit"/>
+                    <input type="submit" value="get a link" id="linkbutton" class="linkbutton" name="submit"/>
                 </div>
-               
+            </div>
+
+            
+            <div class="loadblock" id="loadblock">
+                
+                <h3>Uploading file</h3>
+                <div class="showprogress" id="loaderwrapper">
+                        <div class="loader"  id="loader" ></div>
+                        <div class="perc" id="perc">0%</div>
+                </div>
+
+            </div>
+
+            
+           
+              
+            <div class="videoblock" id="videoblock">
+                <div class="videowrapper">
+                    <video autoplay loop muted>
+                        <source src="transfer_comp.mp4"  type="video/mp4">
+                    </video>
+                </div>
+                <div class="text">
+                    <h5 class="text__title">you're done</h5>
+                    <h5 class="text__stitle">copy your download link below</h5>
+                </div>
+                <div class="linklabel">
+                    <h5 class="link" id="link"></h5>
+                </div>
+                
+            </div> 
+
             </form>
+
         </div>
     </main>
 </body>
 <script src="script.js"></script>
-
+<script src="upload.js"></script>
 </html>
 
-<?php
-$con=mysqli_connect("localhost","root","","quickshare") ;
-if(isset($_REQUEST['submit']))
-{
-    $target_dir = "upload/";
-    $title=$_REQUEST['title'];
-    $message=$_REQUEST['message'];
-    // $img=$_FILES["file"]["name"];
-    // echo $img;
-    // echo "$title";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    
-    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-        echo "The file ". htmlspecialchars( basename( $_FILES["file"]["name"])). " has been uploaded.";
-      }
-}
-?>
+
+<script>
+
+</script>

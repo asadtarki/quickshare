@@ -21,13 +21,16 @@
 body{
     background-image:var(--backgroundImage);
     height: 100vh;
+    width:100%;
 }
 
 nav{
-    padding: 10px 20px;
+    /* background:#3f3d3d; */
+    display: flex;
+    justify-content:start;
     user-select: none;
     height: 80px;
-
+    padding:4px 30px;
 }
 
 ul{
@@ -36,14 +39,24 @@ ul{
 ul li{
     cursor: pointer
 }
+#myProgress {
+    width: 100%;
+    background-color:#fff;
+    width:100px;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }
 
 .logo{
     color: azure;
     font-weight: bolder;
     font-size:36px;
-    position: absolute;
-    z-index:5;
-    padding: 10px;
+    padding:4px 10px;
+   
    
 }
 .cursor{
@@ -102,7 +115,7 @@ ul li{
     
     /* background-color:chocolate; */
 }
-.inputblock input{
+.inputblock input[type='text']{
     outline: none;
     padding:4px 0;
     border:0;  
@@ -151,24 +164,108 @@ textarea{
     border-bottom: 0;
     margin-bottom:20px;
 }
+.loadblock
+{
+    display: none;
+    width: 100%;
+    transition:0.3s linear;
+}
+.videoblock{
+    width: 100%;
+    display: none;
+    
+}
 
+.videoblock .linklabel{
+    margin:24px 0;
+    
+}
+#loaderwrapper,.videowrapper,.text{
+    width: 100%;
+    padding: 15px 0;
+    border:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+    
+}
+.loader {
+    border: 16px solid #cfcfcf;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite;
 
+  }
+  
+  .perc{
+      margin:10px 0;
+      font-size:24px;
+  }
 
-#linkbutton{
+  .text__title{
+      font-size:18px;
+      color: #1b1b1b;
+      font-weight: 600;
+  }
+  .text__stitle{
+    font-size: 14px;
+    color: #313030;
+    font-weight: 400;
+}
+.linklabel{
+    padding:10px 6px;
+
+}
+.link
+{
+    border-radius:4px;
+    padding:10px 0;
+    text-align: center;
+    border: 2px solid #aca9a9;
+    font-size:10px;
+    font-family: monospace;
+    color:#313030;
+    overflow-x:hidden;
+}
+.linkbutton{
+    outline: none;
+    border: 0;
     bottom: 0;
-    background-image:var(--backgroundImage);
+    background:#4563e6;
     padding:8px 0;
     border-radius:4px;
     color: #fff;
-    text-transform: capitalize;
-    font-size: medium;
+    font-size:18px;
+    font-weight:600;
+    transition: all 0.3s ease;
+}
+.dislinkbutton{
+    outline: none;
+    border: 0;
+    font-weight:600;
+    bottom: 0;
+    background:silver;
+    padding:8px 0;
+    border-radius:4px;
+    color:#fff;
+
+    font-size:18px;
     transition: all 0.3s ease;
 }
 #linkbutton:hover{
     box-shadow: 2px 2px 4px rgba(93, 100, 165, 0.933);
 }
 
-.file::-webkit-file-upload-button
+#filepicker::-webkit-file-upload-button
 
  {
     -webkit-appearance: none;
@@ -181,7 +278,6 @@ textarea{
     }
 
 
-  
   
   .file::before {
     text-align: center;
@@ -203,8 +299,62 @@ textarea{
   .file:hover::before{
       text-shadow: 2px 2px 4px skyblue;
   }
-  /* .file:hover::before {
-    border-color: black;
-  } */
-  /* .file:active::before {
-    background: -webkit-linear-gradient(top, #a2a9bd, #8089b4);
+  @media only screen and (max-width: 600px) {
+
+    nav{
+
+        padding: 0;
+        margin: 0;
+       display: flex;
+    }
+  }
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  video{
+      width:200px;
+      width: 200px;
+  }
+
+  /* css for download page */
+
+  .download{
+      position: absolute;
+      width: 100%;
+      bottom:0;
+      padding:12px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .download a{
+    background:#4563e6;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding:8px 0;
+    border-radius:4px;
+    font-size:20px;
+    font-weight:700px;
+
+    text-decoration: none;
+  }
+  svg{
+      width:100%;
+      height:150px;
+      fill:#3498db;
+      
+ }
+
+ .filename{
+     margin-top:60px;
+     color:#313030;
+ }
