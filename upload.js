@@ -56,7 +56,7 @@ function uploadFile(event){
             
             document.getElementById('link').innerHTML=baseurl+`?download=${xhr.responseText}`;
             res.innerHTML=xhr.responseText
-            progressbar.style.border="16px solid #3498db"
+            
         }
     }
 // update progress bar on upload  of data
@@ -70,8 +70,13 @@ function uploadFile(event){
         progresstext.innerHTML=Math.trunc(perc.toFixed(2))+'%'
 
         if(perc.toFixed(2)==100){
-            progressloader.style.display='none'
-            showlink.style.display='block'
+
+            progressbar.style.border="16px solid #3498db";
+            setTimeout(() => {
+                progressloader.style.display='none'
+                showlink.style.display='block'
+            },1000);
+           
            
         }
     
