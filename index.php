@@ -78,6 +78,9 @@
             </form>
 
         </div>
+        <div class="quickshare__text">
+            <p>The simplest way to send the file</p>
+        </div>
     </main>
 </body>
 <script src="script.js"></script>

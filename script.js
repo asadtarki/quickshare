@@ -1,7 +1,14 @@
-const cursor=document.getElementById('cursor');
-const logo=document.getElementById('logo');
-const form=document.getElementById('form');
-//console.log(cursor);
+
+const smallDevice = window.matchMedia("(min-width:768px)");
+handleDeviceChange(smallDevice);
+smallDevice.addListener(handleDeviceChange);
+
+function handleDeviceChange(e) {
+  if (e.matches) {
+
+    const cursor=document.getElementById('cursor'); 
+    const logo=document.getElementById('logo');
+    const form=document.getElementById('form');
 
 
 
@@ -53,5 +60,13 @@ function scale() {
     cursor.style.height="40px";
     cursor.style.background="rgba(97, 151, 210,0.5)";
 }
+
+
+
+
+  }
+  
+}
+// Run it initially
 
 
