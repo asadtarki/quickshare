@@ -39,17 +39,6 @@ ul{
 ul li{
     cursor: pointer
 }
-#myProgress {
-    width: 100%;
-    background-color:#fff;
-    width:100px;
-  }
-  
-  #myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
-  }
 
 .logo{
     color: azure;
@@ -73,7 +62,7 @@ ul li{
 
 .form-container{
     color: #0f0f0f;
-    margin: 50px 30px;
+    margin: 80px;
     width:280px;
     height:400px;
     background: #fff;

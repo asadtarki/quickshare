@@ -18,6 +18,11 @@ uploadBtn.disabled =true;
 
 const baseurl="localhost/quickshare/download.php";
 
+
+// var zip = new JSZip();
+// zip.file("Hello.txt", "Hello World\n");
+
+
 file.addEventListener('change',()=>{
     if(file.files.length>0){
         uploadBtn.disabled = false;
