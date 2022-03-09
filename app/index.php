@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickShare</title>
     
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="/style/app.css">
    
 </head>
 <body>
@@ -83,9 +83,8 @@
         </div>
     </main>
 </body>
-<script src="script.js"></script>
-<script src="upload.js"></script>
-
+<script src="/script/script.js"></script>
+<script src="/script/upload.js"></script>
 </html>
 
 
