@@ -55,7 +55,7 @@ function uploadFile(event){
 
     //ajax request to send data.
     const xhr=new XMLHttpRequest();
-    xhr.open('POST','savefile.php');
+    xhr.open('POST','./savefile.php');
     xhr.onreadystatechange = function() {
         if (xhr.status == 200) {
             

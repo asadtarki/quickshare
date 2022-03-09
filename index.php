@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickShare</title>
     
-    <link rel="stylesheet" href="/style/app.css">
+    <link rel="stylesheet" href="./style/app.css">
    
 </head>
 <body>
@@ -62,7 +62,7 @@
             <div class="videoblock" id="videoblock">
                 <div class="videowrapper">
                     <video autoplay loop muted>
-                        <source src="transfer_comp.mp4"  type="video/mp4">
+                        <source src="./Assets/transfer_comp.mp4"  type="video/mp4">
                     </video>
                 </div>
                 <div class="text">
@@ -83,8 +83,8 @@
         </div>
     </main>
 </body>
-<script src="/script/script.js"></script>
-<script src="/script/upload.js"></script>
+<script src="./script/script.js"></script>
+<script src="./script/upload.js"></script>
 </html>
 
 

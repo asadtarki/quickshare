@@ -1,6 +1,6 @@
 <?php
     $title=$message="";
-    require("config.php");
+    require("./config/config.php");
     $target_dir = "upload/";
     $title=$_REQUEST['title'];
     $message=$_REQUEST['message'];
