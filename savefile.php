@@ -1,14 +1,16 @@
 <?php
+    session_start();
     $title=$message="";
+    $userid=$_SESSION['loggeduser'];
     require("./config/config.php");
     $target_dir = "upload/";
     $title=$_REQUEST['title'];
     $message=$_REQUEST['message'];
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
     $filename=basename($_FILES["file"]["name"]);
-    $newfilename=basename($_FILES["file"]["name"]).time();
+    $newfilename=time().basename($_FILES["file"]["name"]);
 
-    $query="insert into files values(null,'".$title."','".$message."','".$filename."','".$newfilename."')";
+    $query="insert into files values(null,'".$userid."','".$title."','".$message."','".$filename."','".$newfilename."')";
 
 
     $res=mysqli_query($con,$query);

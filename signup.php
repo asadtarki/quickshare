@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickShare</title>
     
-    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/signup.css">
    
 </head>
 <body>
@@ -21,7 +21,7 @@
     </header>
     <main>
         <div class="form-container"  id="form">
-            <form   method="post" id="mForm" action="Auth.php">
+            <form   method="post" id="mForm" action="adduser.php">
             
             <div class="top" id="top">
             <?php
@@ -32,10 +32,14 @@
                         echo "<p class='error__message'>",$_SESSION['failed'],"</p>";
                     }
                 ?>
-                <h3>Login</h3>   
+                <h3>Signup</h3>  
+                <div class="inputblock" id="ib0">    
+                    <input type="text" placeholder="  " name="name" class="title" id="name" >
+                    <label  class="mylabel">Name</label>
+                </div> 
                 
                 <div class="inputblock">    
-                    <input type="text" placeholder="   " name="email" class="title" id="email" >
+                    <input type="text" placeholder="  " name="email" class="title" id="email" >
                     <label  class="mylabel">Email</label>
                 </div>
 
@@ -48,8 +52,8 @@
                     
                    
                 <div class="inputblock ib3" id="ib3">
-                    <input type="submit" value="Login" id="loginbutton" class="disbutton" name="submit" disabled>
-                    <a class="signuplink"href="signup.php">Don't have account?create account.</a>
+                    <input type="submit" value="signup" id="loginbutton" class="disbutton" name="submit" disabled>
+                    <a class="signuplink"href="index.php">Already have an account?login.</a>
                 </div>
             </div>
 

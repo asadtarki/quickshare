@@ -40,44 +40,22 @@ nav{
 }
 
 ul{
-    width: 100%;
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    row-gap:300px;
+    
 }
 ul li{
-    cursor: pointer;
+    cursor: pointer
 }
 
 
 .logo{
-    flex-grow:5;
     font-family: Volkhov;
     color: azure;
     font-weight: bolder;
     font-size:36px;
     padding:10px;
-}
-
-.logout{
-    flex-grow: 1;
-    color:#4563e6;
-    text-align: center;
-    border-radius: 8px;
-    padding:12px 4px;
-    background-color:#fff;
-    text-decoration: none;
-} 
-.logout :active{
-    color:#3498db;
-    text-decoration: none;
-}
-
-.logout :visited{
-    color:#3498db;
-    text-decoration: none;
+   
+   
 }
 .cursor{
     width:10px;
@@ -111,7 +89,7 @@ main{
 .form-container{
     color: #0f0f0f;
     margin: 80px;
-    width:280px;
+    width:380px;
     height:400px;
     background: #fff;
     position: relative;
@@ -128,15 +106,16 @@ main{
     position: relative;
     display: flex;
     flex-direction: column;
-    padding:12px; 
+    padding:8px; 
     border-top: 1px solid rgb(165, 162, 162);
     border-bottom: 1px solid rgb(165, 162, 162);
 }
 .form-container h3{
     padding: 10px 0;
     text-align: center;
-    font-size:22px;
-    font-weight: 400;
+    font-size:32px;
+    font-weight:500;
+    margin-bottom: 40px;
    
 }
 
@@ -147,38 +126,50 @@ main{
     cursor:text;
     text-transform:capitalize;
     color:rgb(120, 120, 131);
-    font-size:16px;
+    font-size:18px;
     transition:0.3s ease-in-out;
     
     /* background-color:chocolate; */
 }
 .inputblock input[type='text']{
     outline: none;
-    padding:4px 0;
-    border:0;  
+    padding:12px 0;
+    border:0;
+    background-color:#fff;
     color:#3f3d3d;
-    text-transform: capitalize;
+    font-size:18px;
     /* border: 1px solid crimson; */
 }
 
-textarea{
+.inputblock input[type='password']{
     outline: none;
-    padding:4px 0px 30px 0;
+    padding:12px 0;
     border:0;  
     resize: none;
     color:#3f3d3d;
-    text-transform: capitalize;
+    font-size:18px;
 }
+.error__message{
+    background-color:red;
+    color:#fff;
+    text-align: center;
+    border-top-left-radius:8px;
+    border-top-right-radius: 8px;
 
+}
 .inputblock .title:focus +.mylabel,
 .inputblock .title:not(:placeholder-shown) ~.mylabel,
 
 .inputblock textarea:focus +.mylabel,
+.inputblock textarea:not(:placeholder-shown) +.mylabel,
+
+.inputblock textarea:focus +.mylabel,
 .inputblock textarea:not(:placeholder-shown) +.mylabel
+
 {
    margin:-4px 0;
-   font-size:12px;
-   color: #627899;
+   font-size:14px;
+   color: #619af0;
    padding-top:4px;
 }
 
@@ -201,52 +192,9 @@ textarea{
     border-bottom: 0;
     margin-bottom:20px;
 }
-.loadblock
-{
-    display: none;
-    width: 100%;
-    transition:0.3s linear;
-}
-.videoblock{
-    width: 100%;
-    display: none;
-    
-}
 
-.videoblock .linklabel{
-    margin:24px 0;
-    
-}
-#loaderwrapper,.videowrapper,.text{
-    width: 100%;
-    padding: 15px 0;
-    border:0;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-    
-    
-}
-.loader {
-    border: 16px solid #cfcfcf;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-animation: spin 2s linear infinite; 
-    animation: spin 2s linear infinite;
 
-  }
-  
-  .perc{
-      margin:10px 0;
-      font-size:24px;
-  }
+
 
   .text__title{
       font-size:18px;
@@ -273,7 +221,7 @@ textarea{
     color:#313030;
     overflow-x:hidden;
 }
-.linkbutton{
+.enablebutton{
     outline: none;
     border: 0;
     bottom: 0;
@@ -285,7 +233,7 @@ textarea{
     font-weight:600;
     transition: all 0.3s ease;
 }
-.dislinkbutton{
+.disbutton{
     outline: none;
     border: 0;
     font-weight:600;
@@ -302,91 +250,15 @@ textarea{
     box-shadow: 2px 2px 4px rgba(93, 100, 165, 0.933);
 }
 
-#filepicker::-webkit-file-upload-button
-
- {
-    -webkit-appearance: none;
-    visibility: hidden;
-  }
-  .file::-ms-browse,
-  .file::file-selector-button
-    {
-        visibility: hidden;
-    }
-
+.signuplink{
+    text-align:center;
+    margin-top:4px;
+    color: #4563e6;
+}
 
   
-  .file::before {
-    text-align: center;
-    content: 'Select some file';
-    display:block;
-    background: linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px dashed rgb(78, 114, 121);
-    border-radius: 3px;
-    padding:14px 0;
-    outline: none;
-    color: #5486cc;
-    white-space: nowrap;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 700;
-    font-size: 10pt;
-    text-decoration: underline;
-  }
-  .file:hover::before{
-      text-shadow: 2px 2px 4px skyblue;
-  }
+
  
-/* Safari */
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  video{
-      width:200px;
-      width: 200px;
-  }
-
-  /* css for download page */
-
-  .download{
-      position: absolute;
-      width: 100%;
-      bottom:0;
-      padding:12px; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .download a{
-    background:#4563e6;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    padding:8px 0;
-    border-radius:4px;
-    font-size:20px;
-    font-weight:700px;
-
-    text-decoration: none;
-  }
-  svg{
-      width:100%;
-      height:150px;
-      fill:#3498db;
-      
- }
-
- .filename{
-     margin-top:60px;
-     color:#313030;
- }
 
 
  @media only screen and (max-width:768px) {
@@ -413,12 +285,7 @@ textarea{
    }
    .form-container{
        width:100%;
-       margin:20px;
        
-   }
-
-   .logo{
-       flex-grow: 2;
    }
 
 
