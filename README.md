@@ -1,1 +1,1 @@
-# quickshare lets you share your files.
+# share files with quickshre
