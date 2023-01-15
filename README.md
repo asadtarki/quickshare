@@ -1,1 +1,1 @@
-# share files with quickshre
+# share files with quickshare
